@@ -17,7 +17,7 @@ const deliveryCharge = 10
 // const PlaceOrderStripe = async (req,res) => {
 //     try {
 //         const {userId,items,amount,address} = req.body
-//         const {origin} = req.heders
+//         const {origin} = req.headers
 //         const  orderData = {
 //             userId,
 //             items,
@@ -31,7 +31,7 @@ const deliveryCharge = 10
 //         await newOrder.save()
 
 //         const line_items = items.map((item) => ({
-//             price_data={
+//             price_data: {
 //                 currency:currency,
 //                 product_data:{
 //                     name:item.name
@@ -41,7 +41,7 @@ const deliveryCharge = 10
 //             quantity:item.quantity
 //         }))
 //         line_items.push({
-//             price_data={
+//             price_data: {
 //                 currency:currency,
 //                 product_data:{
 //                     name:"Delivery Charges"
@@ -124,7 +124,7 @@ const placeOrder = async (req,res)  => {
 // placing order using Gpay order 
 const placeOrderGpay = async (req,res)  => {
     try {
-        
+        res.json({ success: true, message: "Gpay placeholder working" });
     } catch (error) {
         console.log(error);
         res.json({success:false,message:error.message})
@@ -135,10 +135,10 @@ const placeOrderGpay = async (req,res)  => {
 // placing order using razorpay order (12:46)
 const placeOrderRazorpay= async (req,res)  => {
     try {
-        
+        res.json({ success: true, message: " Razorpay PlaceHoder working" });
     } catch (error) {
         console.log(error);
-        res.json({success:false,message:error.message})        
+        res.json({success:false,message:error.message})
     }
 }
 
@@ -148,10 +148,10 @@ const placeOrderRazorpay= async (req,res)  => {
 // placing order using Phonepay order 
 const placeOrderPhonepay= async (req,res)  => {
     try {
-        
+        res.json({ success: true, message: "Phonepay placeholder working" });
     } catch (error) {
         console.log(error);
-        res.json({success:false,message:error.message})        
+        res.json({success:false,message:error.message})
     }
 }
 

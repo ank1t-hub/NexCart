@@ -63,16 +63,6 @@ function PlaceOrder() {
                     toast.error(response.data.message)
                 }
                 break
-            // // case 'stripe':
-            //     const reponseStripe = await axios.post(backendUrl + '/api/order/stripe',orderData,{headers:{token}})
-            //     if (reponseStripe.data.success) {
-            //         const {session_url} = reponseStripe.data
-            //         window.location.replace(session_url)
-            //     }
-            //     else{
-            //         toast.error(reponseStripe.data.message)
-            //     }
-            //     break
             default:
                 break
         }
@@ -84,7 +74,7 @@ function PlaceOrder() {
   }                 
 
   return (
-    <form onSubmit={onSubmitHandler} className='mb-40 flex flex-col sm:flex-row justify-between  gap-4 pt-5 sm:pt-14 min-hh-[80vh] border-t'>
+    <form onSubmit={onSubmitHandler} className='mb-40 flex flex-col sm:flex-row justify-between  gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
       {/* LEFT SIDE  */}
       <div className='flex flex-col gap-4 w-full sm:max-w-120'>
         <div className='text-xl sm:text-2xl my-3'>

@@ -330,3 +330,13 @@ to               <select onChange={(event) => statusHandler(event,order._id)} va
 
 //payment gateways(12.10)
 5_PlaceOrderStripe   for this Update  switch case(onSubmit handler) of Placeorder.jsx of frontend
+            // // case 'stripe':
+            //     const reponseStripe = await axios.post(backendUrl + '/api/order/stripe',orderData,{headers:{token}})
+            //     if (reponseStripe.data.success) {
+            //         const {session_url} = reponseStripe.data
+            //         window.location.replace(session_url)
+            //     }
+            //     else{
+            //         toast.error(reponseStripe.data.message)
+            //     }
+            //     break
