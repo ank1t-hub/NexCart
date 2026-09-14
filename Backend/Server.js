@@ -33,4 +33,7 @@ app.get('/',(req,res) => {
 
 
 //To start the express server
-app.listen(port,() => console.log('server started on port :'+port));
+// app.listen(port,() => console.log('server started on port :'+port));
+if (!process.env.VERCEL) {
+  app.listen(port, () => console.log('server started on port :' + port))
+}
