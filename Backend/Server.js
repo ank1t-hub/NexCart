@@ -12,8 +12,13 @@ import OrderRouter from './routes/OrderRoute.js'
 //App config
 const app = express()
 const port = process.env.PORT || 4000
-connectDb()
-connectCloudinary()
+
+try {
+    connectDb()
+    connectCloudinary()
+} catch (error) {
+    console.error('Startup initialization failed:', error.message)
+}
 
 
 //middlewares
@@ -32,8 +37,9 @@ app.get('/',(req,res) => {
 })
 
 
-//To start the express server
-// app.listen(port,() => console.log('server started on port :'+port));
+//To start the express server locally only
 if (!process.env.VERCEL) {
   app.listen(port, () => console.log('server started on port :' + port))
 }
+
+export default app;
