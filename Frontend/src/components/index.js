@@ -4,7 +4,7 @@ import LatestCollection from "./LatestCollection";
 import Title from "./Title";
 import ProductItems from "./ProductItems";
 import BestSeller from "./BestSeller";
-import OurPolicy from "./ourPolicy";
+import OurPolicy from "./OurPolicy";
 import NewsLatterBox from "./NewsLatterBox";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
