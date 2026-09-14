@@ -5,21 +5,28 @@ import dns from "node:dns";
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 
-const connectDb= async  () => {
+const connectDb = async () => {
     if (!process.env.MONGODB_URI) {
         console.warn('MONGODB_URI is not set. Skipping database connection.');
         return;
     }
 
-    mongoose.connection.on(`connected`,() => {
-        console.log("DB CONNECTED");
+    mongoose.connection.on('connected', () => {
+        console.log('DB CONNECTED')
     })
 
     mongoose.connection.on('error', (error) => {
         console.error('MongoDB connection error:', error.message)
     })
 
-    await mongoose.connect(`${process.env.MONGODB_URI}/e-commerce`) 
+    try {
+        await mongoose.connect(process.env.MONGODB_URI, {
+            dbName: 'e-commerce'
+        })
+    } catch (error) {
+        console.error('MongoDB connect failed:', error.message)
+        throw error
+    }
 }
 
 export default connectDb;

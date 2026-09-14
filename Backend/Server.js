@@ -13,13 +13,13 @@ import OrderRouter from './routes/OrderRoute.js'
 const app = express()
 const port = process.env.PORT || 4000
 
-try {
-    connectDb()
-    connectCloudinary()
-} catch (error) {
-    console.error('Startup initialization failed:', error.message)
-}
+void connectDb().catch((error) => {
+  console.error('MongoDB startup failed:', error.message)
+})
 
+void connectCloudinary().catch((error) => {
+  console.error('Cloudinary startup failed:', error.message)
+})
 
 //middlewares
 app.use(express.json())
