@@ -1,0 +1,12 @@
+//this is file for UserController
+
+import express from "express"
+import { loginUser,registerUser,adminlogin } from "../controllers/UserControler.js"
+
+const userRouter = express.Router();
+
+userRouter.post('/register',registerUser)
+userRouter.post('/login',loginUser)
+userRouter.post('/admin',adminlogin)
+
+export default userRouter

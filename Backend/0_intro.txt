@@ -1,0 +1,18 @@
+npm i cors dotenv express jsonwebtoken mongoose multer validator cloudinary bcrypt razorpay stripe
+npm i -D nodemon
+
+
+
+//files creation order 
+./Server.js
+./config/Mongodb.js
+./config/Cloudinary.js
+./models/ProductModel.js
+./models/UserModel.js
+./controllers/UserController.js
+./Routes/UserRoute.js
+./controllers/ProductController.js
+./Routes/ProductRoute.js
+./middleware/MulterMiddleware.js
+./middleware/AdminAuthMidleware.js
+Now we have to create dashbord fo admin for that  create admin folder at root directory

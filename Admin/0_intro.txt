@@ -1,0 +1,11 @@
+npm install axios  react-router-dom react-toastify
+//using this axios we make api calls 
+npm install tailwindcss @tailwindcss/vite
+
+
+//files created
+./pages/Add.jsx
+./pages/List.jsx
+./pages/Order.jsx
+./components/NavBar.jsx
+./components/NavBar.jsx
