@@ -351,3 +351,13 @@ These placeholders are included as future capture points and do not represent ac
 ---
 
 This README documents the project as it exists in the repository today without modifying functionality or claiming future features as already implemented.
+
+
+
+## 🌐 Live Demo
+
+| Service | Link |
+|---|---|
+| 🛍️ Frontend | [Live Store](https://nex-cart-frontend-sigma.vercel.app) |
+| 🛠️ Admin Dashboard | [Admin Panel](https://nex-cart-admin.vercel.app) |
+| ⚙️ Backend API | [Backend](https://nex-cart-backend-phi.vercel.app) |
