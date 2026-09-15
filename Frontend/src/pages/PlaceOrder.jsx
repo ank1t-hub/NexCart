@@ -63,6 +63,40 @@ function PlaceOrder() {
                     toast.error(response.data.message)
                 }
                 break
+
+            case 'Google_pay':
+                const gpayResponse = await axios.post(backendUrl + '/api/order/gpay', orderData, { headers: { token } })
+                if (gpayResponse.data.success) {
+                    setCartItems({}) //here we in frontend we also clearing cartData after  Placing order
+                    navigate('/orders')                    
+                    toast.success(gpayResponse.data.message || 'GPay order placed')
+                } else {
+                    toast.error(gpayResponse.data.message)
+                }
+                break
+
+            case 'Rozorpay':
+                const razorpayResponse = await axios.post(backendUrl + '/api/order/razorpay', orderData, { headers: { token } })
+                if (razorpayResponse.data.success) {
+                    setCartItems({}) //here we in frontend we also clearing cartData after  Placing order
+                    navigate('/orders')
+                    toast.success(razorpayResponse.data.message || 'Razorpay order placed')
+                } else {
+                    toast.error(razorpayResponse.data.message)
+                }
+                break
+
+            case 'PhonePay':
+                const phonepayResponse = await axios.post(backendUrl + '/api/order/phonepay', orderData, { headers: { token } })
+                if (phonepayResponse.data.success) {
+                    setCartItems({}) //here we in frontend we also clearing cartData after  Placing order
+                    navigate('/orders')
+                    toast.success(phonepayResponse.data.message || 'PhonePe order placed')
+                } else {
+                    toast.error(phonepayResponse.data.message)
+                }
+                break
+
             default:
                 break
         }
